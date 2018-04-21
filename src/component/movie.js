@@ -16,7 +16,7 @@ class Movie extends Component {
     }
 
     render() {
-        const ActorInfo = ({actors}) => {
+        const ActorInfo = ({actors=[]}) => {
             return actors.map((actor, i) =>
                 <p key={i}>
                     <b>{actor.ActorName}</b> {actor.CharacterName}
@@ -24,7 +24,7 @@ class Movie extends Component {
             );
         };
 
-        const ReviewInfo = ({reviews}) => {
+        const ReviewInfo = ({reviews=[]}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
                     <b>{review.username}</b> {review.review}
@@ -33,7 +33,7 @@ class Movie extends Component {
             );
         }
 
-        const DetailInfo = ({currentMovie}) => {
+        const DetailInfo = ({currentMovie=[]}) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
             }
